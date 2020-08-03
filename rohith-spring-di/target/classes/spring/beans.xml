@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+        
+        <!--  Using Setter injection   -->
+        <bean id = "RohithStudent" class = "com.rohith.spring.di.rohith_spring_di.Student">
+        <property name="studentName" value="Rohith Varghese "/>
+        <property name="id" value = "123"/>
+        <property name= "address">
+        	<bean class = "com.rohith.spring.di.rohith_spring_di.Address">
+        		<property name="location" value = "VV Puram"/>
+        		<property name="pincode" value = "560014"/>
+        	</bean>
+        </property>
+        <property name="education">
+        	<bean class= "com.rohith.spring.di.rohith_spring_di.Education">
+        		<property name="education" value="MCA"/>
+        	</bean>
+        </property>
+        </bean>
+        
+        <bean id = "SamStudent" class = "com.rohith.spring.di.rohith_spring_di.Student">
+        <property name="studentName" value="Sam Varghese "/>
+        <property name="id" value = "113"/>
+        <property name= "address">
+        	<bean class = "com.rohith.spring.di.rohith_spring_di.Address">
+        		<property name="location" value = "VV Puram"/>
+        		<property name="pincode" value = "560014"/>
+        	</bean>
+        </property>
+        <property name="education">
+        	<bean class= "com.rohith.spring.di.rohith_spring_di.Education">
+        		<property name="education" value="MCA"/>
+        	</bean>
+        </property>
+        </bean>
+     
+        
+         
+                 
+        <!--  Using Constructor injection            
+         <bean id = "RohithStudent" class = "com.rohith.spring.di.rohith_spring_di.Student">
+        <constructor-arg name="studentName" value="Rohith Varghese "/>
+        <constructor-arg name="id" value = "123"/>
+        </bean>
+        <bean id = "SamStudent" class = "com.rohith.spring.di.rohith_spring_di.Student">
+        <constructor-arg name="id" value = "111" type="int"/>
+        </bean>
+          -->  
+        
+</beans>        
+

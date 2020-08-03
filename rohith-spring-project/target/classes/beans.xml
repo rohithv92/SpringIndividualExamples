@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <context:annotation-config/>
+    <bean id="address" class="com.rohith.spring.project.rohith_spring_project.builder.Address">
+    	<property name="addressInfo" value="VV Puram"/>
+    	<property name="pincode" value="560044" />
+    </bean>
+    
+    <bean id="person" class="com.rohith.spring.project.rohith_spring_project.builder.Person" autowire="byType">
+    <property name="personName" value="Rohith"/>
+    <property name="personAge" value="28"/>
+<!--<property name="address" ref="address"/>  -->    
+<!--<property name="sim" ref="simcard"/>-->
+    </bean>
+            
+    <bean id="service1" class="com.rohith.spring.project.rohith_spring_project.service.impl.CallingService"/> 
+    <bean id="service2" class="com.rohith.spring.project.rohith_spring_project.service.impl.DataService"/> 
+    <bean id="service3" class="com.rohith.spring.project.rohith_spring_project.service.impl.HelloTunesService"/> 
+        
+    <bean id="simcard" class="com.rohith.spring.project.rohith_spring_project.subscriber.impl.AirtelSubscriber">
+    
+    <property name ="services" >
+    	<list>
+    		<ref bean = "service1"/>
+    		<ref bean = "service2"/>
+    		<ref bean = "service3"/>
+    	</list>
+    
+    </property>
+    
+    </bean>       
+        
+</beans>        
+
